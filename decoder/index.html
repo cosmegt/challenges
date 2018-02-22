@@ -70,8 +70,9 @@ function caesar(){
 
     for(var i = 0; i < value.length; i++){
         char = value.charCodeAt(i);
+        newChar = char + 3;
+        
         if(char > 65 && char < 90){
-            newChar = char + 3;
             if(newChar > 90){
                 primitiveChar = newChar - 91;
                 newChar = primitiveChar + 65;
@@ -81,7 +82,6 @@ function caesar(){
             }
         }
         else if(char > 97 && char < 122 ){
-            newChar = char + 3;
             if(newChar > 122){
                 primitiveChar = newChar - 123;
                 newChar = primitiveChar + 97;
@@ -89,6 +89,9 @@ function caesar(){
             }else{
                 decoded += String.fromCharCode(newChar)
             }
+        }
+        else{
+            decoded += String.fromCharCode(newChar)
         }
         
     }
