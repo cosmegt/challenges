@@ -38,40 +38,8 @@ function rot13(){
 
     for(var i = 0; i < value.length; i++){
         char = value.charCodeAt(i);
-        if(char > 65 && char < 90){
-            newChar = char + 13;
-            if(newChar > 90){
-                primitiveChar = newChar - 91;
-                newChar = primitiveChar + 65;
-                decoded += String.fromCharCode(newChar)
-            }else{
-                decoded += String.fromCharCode(newChar)
-            }
-        }
-        else if(char > 97 && char < 122 ){
-            newChar = char + 13;
-            if(newChar > 122){
-                primitiveChar = newChar - 123;
-                newChar = primitiveChar + 97;
-                decoded += String.fromCharCode(newChar)
-            }else{
-                decoded += String.fromCharCode(newChar)
-            }
-        }
-        
-    }
-    
-    solved(decoded);
-}
-function caesar(){
-    var code = document.getElementById('code');
-    var value = code.value;
-    var decoded = "";
+        newChar = char + 13;
 
-    for(var i = 0; i < value.length; i++){
-        char = value.charCodeAt(i);
-        newChar = char + 3;
-        
         if(char > 65 && char < 90){
             if(newChar > 90){
                 primitiveChar = newChar - 91;
@@ -91,7 +59,42 @@ function caesar(){
             }
         }
         else{
-            decoded += String.fromCharCode(newChar)
+            decoded += String.fromCharCode(char)
+        }
+        
+    }
+    
+    solved(decoded);
+}
+function caesar(){
+    var code = document.getElementById('code');
+    var value = code.value;
+    var decoded = "";
+
+    for(var i = 0; i < value.length; i++){
+        char = value.charCodeAt(i);
+        newChar = char + 3;
+
+        if(char > 65 && char < 90){
+            if(newChar > 90){
+                primitiveChar = newChar - 91;
+                newChar = primitiveChar + 65;
+                decoded += String.fromCharCode(newChar)
+            }else{
+                decoded += String.fromCharCode(newChar)
+            }
+        }
+        else if(char > 97 && char < 122 ){
+            if(newChar > 122){
+                primitiveChar = newChar - 123;
+                newChar = primitiveChar + 97;
+                decoded += String.fromCharCode(newChar)
+            }else{
+                decoded += String.fromCharCode(newChar)
+            }
+        }
+        else{
+            decoded += String.fromCharCode(char)
         }
         
     }
