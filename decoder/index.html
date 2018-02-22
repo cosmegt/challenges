@@ -1,0 +1,71 @@
+<input type="text" placeholder="Code" id="code"> 
+<select name="type" id="type">
+    <option value="rot13">ROT 13</option>
+</select>
+
+<button onclick="cypher();">Cypher</button>
+<script>
+function solved(message){
+    var result = document.getElementById('result');
+    result.innerHTML = message;
+}
+function cypher(){
+    
+    var type = document.getElementById('type');
+    type = type.value;
+
+    switch (type) {
+        case 'rot13':
+            rot13();        
+            break;
+    
+        default:
+            console.log('error')
+            break;
+    }
+
+
+
+}
+
+function rot13(){
+    var code = document.getElementById('code');
+    var value = code.value;
+    var decoded = "";
+
+    for(var i = 0; i < value.length; i++){
+        char = value.charCodeAt(i);
+        if(char > 65 && char < 90){
+            newChar = char + 13;
+            if(newChar > 90){
+                primitiveChar = newChar - 91;
+                newChar = primitiveChar + 65;
+                decoded += String.fromCharCode(newChar)
+            }else{
+                decoded += String.fromCharCode(newChar)
+            }
+        }
+        else if(char > 97 && char < 122 ){
+            newChar = char + 13;
+            if(newChar > 122){
+                primitiveChar = newChar - 123;
+                newChar = primitiveChar + 97;
+                decoded += String.fromCharCode(newChar)
+            }else{
+                decoded += String.fromCharCode(newChar)
+            }
+        }
+        
+    }
+    
+    solved(decoded);
+}
+
+
+</script>
+<br>
+<div>
+Result:
+<br>
+<span id="result"></span>
+</div>
