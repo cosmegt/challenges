@@ -15,7 +15,6 @@ function cypher(){
     var type = document.getElementById('type');
     var encro = document.getElementById('code');
     type = type.value;
-
     switch (type) {
         case 'rot13':
             rot13(encro);        
@@ -28,15 +27,12 @@ function cypher(){
             break;
     }
 }
-
 function rot13(code){
     var value = code.value;
     var decoded = "";
-
     for(var i = 0; i < value.length; i++){
         char = value.charCodeAt(i);
         newChar = char + 13;
-
         if(char >= 65 && char <= 90){
             if(newChar > 90){
                 newChar = (newChar - 91) + 65;
@@ -61,15 +57,12 @@ function rot13(code){
     
     solved(decoded);
 }
-
 function caesar(){
     var value = code.value;
     var decoded = "";
-
     for(var i = 0; i < value.length; i++){
         char = value.charCodeAt(i);
         newChar = char + 3;
-
         if(char >= 65 && char <= 90){
             if(newChar > 90){
                 newChar = (newChar - 91) + 65;
@@ -94,7 +87,6 @@ function caesar(){
     
     solved(decoded);
 }
-
 </script>
 <br>
 <div>
