@@ -1,16 +1,13 @@
-var prim = [];
-var sum = 0;
-
 var primer = function(n) {
-    // Eratosthenes algorithm to find all primes under n
+    // Eratosthenes Sieve Algorithm //source:: wikipedia
     var array = [], upperLimit = Math.sqrt(n), output = [];
 
-    // Make an array from 2 to (n - 1)
+    // Make array from n #
     for (var i = 0; i < n; i++) {
         array.push(true);
     }
 
-    // Remove multiples of primes starting from 2, 3, 5,...
+    // Remove multiples
     for (var i = 2; i <= upperLimit; i++) {
         if (array[i]) {
             for (var j = i * i; j < n; j += i) {
@@ -19,7 +16,7 @@ var primer = function(n) {
         }
     }
 
-    // All array[i] set to true are primes
+    //The rest are primes
     for (var i = 2; i < n; i++) {
         if(array[i]) {
             output.push(i);
@@ -29,4 +26,17 @@ var primer = function(n) {
     return output;
 };
 
-console.log(primer(10))
+var adder = function(n){
+    //callback for primes
+    var primes = primer(n);
+    
+    //w3 schools method to add array
+    function getSum(total, num) {
+        return total + num;
+    }
+    console.log(primes.reduce(getSum));
+}
+
+
+//as many primes youll like
+adder(2000000);
