@@ -6,7 +6,7 @@ var primer = function(n) {
     for (var i = 0; i < n; i++) {
         array.push(true);
     }
-
+    console.log(array);
     // Remove multiples
     for (var i = 2; i <= upperLimit; i++) {
         if (array[i]) {
