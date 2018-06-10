@@ -11,6 +11,6 @@ for(var i = 0; i < term; i++){
     }
 }
 
-console.log(seq);
+console.log(seq); 
 console.log("sum: " + sum);
 
