@@ -2,7 +2,7 @@ var index = [63,25,73,1,98,73,56,84,86,57,16,83,8,25,81,56,9,53,98,67,99,12,83,8
 
 function countingSort(arr) {
     var counters = [];
-    for(var a in 100){
+    for(var a = 0; a < 100; a++){
         var count = 0;
         for(var x in arr){
             if(a == arr[x]){
