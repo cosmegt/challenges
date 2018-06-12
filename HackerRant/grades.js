@@ -2,13 +2,15 @@ function gradingStudents(grades) {
 
     for(var x in grades){
         var mult = grades[x]; 
-        if(grades[x] % 5 == 0){
-            mult = mult;
+        while(true){
+            if(mult%5 != 0){
+                mult++
+            }
+            else{
+                break;
+            }
         }
-        else{
-            mult++;
-        }
-        console.log(mult)
+        console.log(mult);
     }
 }
 
