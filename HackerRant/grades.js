@@ -10,7 +10,17 @@ function gradingStudents(grades) {
                 break;
             }
         }
-        console.log(mult);
+        if(mult > 38 ){
+            if(mult - grades[x] < 3){
+                console.log(mult);
+            }
+            else{
+                console.log(grades[x]);
+            }
+        }
+        else{
+            console.log(grades[x])
+        }
     }
 }
 
