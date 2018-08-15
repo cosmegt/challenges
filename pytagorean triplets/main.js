@@ -1,3 +1,5 @@
+
+//sqr gets the square root of a number
 function sqr(n, g) {
     if (!g) {
         // Take an initial guess at the square root
@@ -15,4 +17,4 @@ function sqr(n, g) {
 }
 
 console.log(sqr(256)); // 6.48074069840786
-// console.log(Math.sqrt(42)) about the same speed
+
